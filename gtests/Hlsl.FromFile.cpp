@@ -461,6 +461,7 @@ INSTANTIATE_TEST_SUITE_P(
         {"hlsl.typeGraphCopy.vert", "main"},
         {"hlsl.typedef.frag", "PixelShaderFunction"},
         {"hlsl.whileLoop.frag", "PixelShaderFunction"},
+        {"hlsl.vkimageformat.frag", "main"},
         {"hlsl.void.frag", "PixelShaderFunction"},
         {"hlsl.type.type.conversion.all.frag", "main"},
         {"hlsl.instance.geom", "GeometryShader"}

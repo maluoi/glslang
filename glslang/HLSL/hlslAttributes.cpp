@@ -58,6 +58,8 @@ namespace glslang {
                 return EatConstantId;
             else if (name == "push_constant")
                 return EatPushConstant;
+            else if (name == "image_format")
+                return EatImageFormat;
         } else if (nameSpace == "spv") {
             if (name == "format_rgba32f")       return EatFormatRgba32f;
             if (name == "format_rgba16f")       return EatFormatRgba16f;

@@ -2026,6 +2026,27 @@ void HlslParseContext::transferTypeAttributes(const TSourceLoc& loc, const TAttr
         case EatNonWritable:  type.getQualifier().readonly = true;   break;
         case EatNonReadable:  type.getQualifier().writeonly = true;  break;
 
+        case EatImageFormat:
+        {
+            TString formatName;
+            if (it->getString(formatName)) {
+                TLayoutFormat format = ElfNone;
+                for (TLayoutFormat f = (TLayoutFormat)(ElfNone + 1); f < ElfCount; f = (TLayoutFormat)(f + 1)) {
+                    if (formatName == TQualifier::getLayoutFormatString(f)) {
+                        format = f;
+                        break;
+                    }
+                }
+                if (format != ElfNone)
+                    type.getQualifier().layoutFormat = format;
+                else
+                    error(loc, "unknown image format", "image_format", formatName.c_str());
+            } else {
+                error(loc, "expected a string argument", "image_format", "");
+            }
+            break;
+        }
+
         default:
             if (! allowEntry)
                 warn(loc, "attribute does not apply to a type", "", "");
