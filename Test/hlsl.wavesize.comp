@@ -1,0 +1,8 @@
+RWStructuredBuffer<uint> data;
+
+[numthreads(64, 1, 1)]
+[WaveSize(32)]
+void CSMain(uint3 dti : SV_DispatchThreadID)
+{
+	data[dti.x] = WaveGetLaneIndex();
+}

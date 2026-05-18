@@ -134,6 +134,8 @@ namespace glslang {
             return EatMaxVertexCount;
         else if (name == "numthreads")
             return EatNumThreads;
+        else if (name == "WaveSize" || name == "wavesize")
+            return EatWaveSize;
         else if (name == "outputcontrolpoints")
             return EatOutputControlPoints;
         else if (name == "outputtopology")

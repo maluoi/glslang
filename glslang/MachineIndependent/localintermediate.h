@@ -358,6 +358,7 @@ public:
         binaryDoubleOutput(false),
         subgroupUniformControlFlow(false),
         maximallyReconverges(false),
+        waveSize(0),
         usePhysicalStorageBuffer(false),
         spirvRequirement(nullptr),
         spirvExecutionMode(nullptr),
@@ -1032,6 +1033,9 @@ public:
     void setMaximallyReconverges() { maximallyReconverges = true; }
     bool getMaximallyReconverges() const { return maximallyReconverges; }
 
+    bool setWaveSize(int size) { if (waveSize != 0 && waveSize != size) return false; waveSize = size; return true; }
+    int getWaveSize() const { return waveSize; }
+
     // GL_EXT_spirv_intrinsics
     void insertSpirvRequirement(const TSpirvRequirement* spirvReq);
     bool hasSpirvRequirement() const { return spirvRequirement != nullptr; }
@@ -1320,6 +1324,7 @@ protected:
     bool binaryDoubleOutput;
     bool subgroupUniformControlFlow;
     bool maximallyReconverges;
+    int waveSize;
     bool usePhysicalStorageBuffer;
     bool useReplicatedComposites { false };
     bool promoteUint32Indices { false };

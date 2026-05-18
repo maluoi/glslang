@@ -1759,6 +1759,18 @@ void HlslParseContext::handleEntryPointAttributes(const TSourceLoc& loc, const T
                 intermediate.setLocalSize(lid, sequence[lid]->getAsConstantUnion()->getConstArray()[0].getIConst());
             break;
         }
+        case EatWaveSize:
+        {
+            int waveSize;
+            if (! it->getInt(waveSize)) {
+                error(loc, "invalid WaveSize", "", "");
+            } else if (waveSize < 4 || waveSize > 128 || (waveSize & (waveSize - 1)) != 0) {
+                error(loc, "WaveSize must be a power of two between 4 and 128", "", "");
+            } else if (! intermediate.setWaveSize(waveSize)) {
+                error(loc, "cannot change previously set WaveSize attribute", "", "");
+            }
+            break;
+        }
         case EatInstance: 
         {
             int invocations;
