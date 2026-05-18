@@ -1928,11 +1928,6 @@ TGlslangToSpvTraverser::TGlslangToSpvTraverser(unsigned int spvVersion,
                                                                                    glslangIntermediate->getLocalSize(2));
             }
         }
-        if (glslangIntermediate->getWaveSize() != 0) {
-            builder.addCapability(spv::Capability::SubgroupSizeControl);
-            builder.addExtension(spv::E_SPV_EXT_subgroup_size_control);
-            builder.addExecutionMode(shaderEntry, spv::ExecutionMode::SubgroupSize, glslangIntermediate->getWaveSize());
-        }
         if (glslangIntermediate->getLayoutDerivativeModeNone() == glslang::LayoutDerivativeGroupQuads) {
             builder.addCapability(spv::Capability::ComputeDerivativeGroupQuadsNV);
             builder.addExecutionMode(shaderEntry, spv::ExecutionMode::DerivativeGroupQuadsNV);

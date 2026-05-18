@@ -45,6 +45,5 @@ static const char* const E_SPV_EXT_float8 = "SPV_EXT_float8";
 static const char* const E_SPV_EXT_shader_64bit_indexing = "SPV_EXT_shader_64bit_indexing";
 static const char* const E_SPV_EXT_shader_invocation_reorder = "SPV_EXT_shader_invocation_reorder";
 static const char* const E_SPV_EXT_long_vector = "SPV_EXT_long_vector";
-static const char* const E_SPV_EXT_subgroup_size_control = "SPV_EXT_subgroup_size_control";
 
 #endif  // #ifndef GLSLextEXT_H

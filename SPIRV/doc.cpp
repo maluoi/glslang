@@ -1011,8 +1011,6 @@ const char* CapabilityString(int info)
 
     case (int)Capability::StencilExportEXT: return "StencilExportEXT";
 
-    case (int)Capability::SubgroupSizeControl: return "SubgroupSizeControl";
-
     case (int)Capability::Float16ImageAMD:       return "Float16ImageAMD";
     case (int)Capability::ImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
     case (int)Capability::FragmentMaskAMD:       return "FragmentMaskAMD";

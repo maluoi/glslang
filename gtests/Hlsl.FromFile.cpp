@@ -481,7 +481,6 @@ INSTANTIATE_TEST_SUITE_P(
         {"hlsl.wavequery.frag", "PixelShaderFunction"},
         {"hlsl.wavereduction.comp", "CSMain"},
         {"hlsl.wavevote.comp", "CSMain"},
-        {"hlsl.wavesize.comp", "CSMain"},
         { "hlsl.type.type.conversion.valid.frag", "main" },
         {"hlsl.int.dot.frag", "main"}
     }),

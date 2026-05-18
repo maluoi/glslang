@@ -1121,7 +1121,6 @@ enum class Capability : unsigned {
     TileShadingQCOM = 4495,
     CooperativeMatrixConversionQCOM = 4496,
     TextureBlockMatch2QCOM = 4498,
-    SubgroupSizeControl = 5006,
     Float16ImageAMD = 5008,
     ImageGatherBiasLodAMD = 5009,
     FragmentMaskAMD = 5010,
@@ -4117,7 +4116,6 @@ inline const char* CapabilityToString(Capability value) {
     case Capability::TileShadingQCOM: return "TileShadingQCOM";
     case Capability::CooperativeMatrixConversionQCOM: return "CooperativeMatrixConversionQCOM";
     case Capability::TextureBlockMatch2QCOM: return "TextureBlockMatch2QCOM";
-    case Capability::SubgroupSizeControl: return "SubgroupSizeControl";
     case Capability::Float16ImageAMD: return "Float16ImageAMD";
     case Capability::ImageGatherBiasLodAMD: return "ImageGatherBiasLodAMD";
     case Capability::FragmentMaskAMD: return "FragmentMaskAMD";

@@ -123,7 +123,6 @@ namespace glslang {
         EatExport,
         EatMaximallyReconverges,
         EatImageFormat,
-        EatWaveSize,
     };
 
     class TIntermAggregate;
